@@ -9,3 +9,10 @@ export function recieveQuestions(questions) {
 	};
 }
 
+// export function handleRecieveQuestions() {
+// 	return (dispatch) => {
+// 		return _getQuestions().then((questions) => {
+// 			dispatch(recieveQuestions(questions));
+// 		});
+// 	};
+// }
