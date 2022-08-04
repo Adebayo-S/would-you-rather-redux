@@ -21,7 +21,7 @@ class SignIn extends Component {
         const { users } = this.props;
 
         return (
-            <div className="container" style={{ textAlign: 'center' }}>
+            <div className="container">
                 <div className="login-card">
                     <div className="login-card-head">
                         <h2>Welcome to the Would You Rather App!</h2>

@@ -1,4 +1,5 @@
 export const RECIEVE_USERS = 'RECIEVE_USERS';
+export const LOGOUT = 'LOGOUT';
 
 export function recieveUsers(users) {
   return {
@@ -6,3 +7,10 @@ export function recieveUsers(users) {
     users
   }
 }
+
+export function userLogout() {
+  return {
+    type: LOGOUT,
+  }
+}
+

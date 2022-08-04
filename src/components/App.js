@@ -1,10 +1,16 @@
-import { React, Fragment, Component } from 'react';
-import Navbar from './Navbar';
+import { React, Component } from 'react';
 import { connect } from 'react-redux';
+import OpenApp from './OpenApp';
 import { handleInitialData } from '../actions/shared';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import SignIn from './SignIn';
+import Navigation from "./Navigation";
 import '../App.css';
+
+import {
+  Container, Row, Col, Navbar, Nav, NavLink,
+  NavbarBrand,
+} from 'react-bootstrap';
 
 class App extends Component {
 
@@ -13,32 +19,22 @@ class App extends Component {
   }
 
   render() {
+
+    const { isSignedIn } = this.props;
+
     return (
-      <div className="App">
-        {this.props.loading === true ? null
-        : this.props.isSignedIn ? <BrowserRouter>
-          <Route path="/" component={SignIn} />
-        </BrowserRouter> : <p>SIGNED</p> /*:
-          <Fragment>
-            <Navbar />
-            <BrowserRouter>
-              <Switch>
-                {/* <Route path="/" exact component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={Signup} />
-                <Route path="/question" component={Question} />
-                <Route path="/leaderboard" component={Leaderboard} /> */}
-              {/*</div></Switch>
-            </BrowserRouter>
-              </Fragment>*/}
-      </div>
+      <Container>
+        <Navigation />
+        { isSignedIn ?
+        < OpenApp/> :
+        <Route path="/" component={SignIn} /> }
+      </Container>
     );
   }
 }
 
 function mapStateToProps ({ authedUser }) {
   return {
-    loading: authedUser === null,
     isSignedIn: authedUser !== null
   }
 }
