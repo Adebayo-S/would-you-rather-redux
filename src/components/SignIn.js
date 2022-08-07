@@ -15,7 +15,6 @@ class SignIn extends Component {
     e.preventDefault()
     const { userId } = this.state
     this.props.dispatch(signIn(userId))
-    this.props.history.push('/dashboard')
   }
 
   render() {

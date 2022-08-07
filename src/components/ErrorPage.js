@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 
 class ErrorPage extends Component {
 
@@ -10,4 +11,4 @@ class ErrorPage extends Component {
 }
 
 
-export default ErrorPage
+export default withRouter(ErrorPage);
