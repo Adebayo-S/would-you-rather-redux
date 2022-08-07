@@ -39,6 +39,7 @@ function mapStateToProps({ questions, authedUser, users }) {
 
         console.log(answered);
         console.log(unanswered);
+        console.log(users);
 
     answered = answered.map(q => mapQuestionToAvatarURL(q, users));
     unanswered = unanswered.map(q => mapQuestionToAvatarURL(q, users));
