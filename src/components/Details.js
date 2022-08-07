@@ -3,16 +3,8 @@ import ErrorPage from './ErrorPage'
 import SelectAnswer from './SelectAnswer'
 import ShowAnswers from './ShowAnswers'
 import { connect } from 'react-redux'
-import QuestionsSet from './QuestionsSet'
-import { PropTypes } from 'prop-types'
 import {
   Container,
-  Row,
-  Col,
-  Navbar,
-  Nav,
-  NavLink,
-  NavbarBrand,
 } from 'react-bootstrap'
 
 class Details extends Component {

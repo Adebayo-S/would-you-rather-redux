@@ -1,42 +1,35 @@
-import { React, Component } from 'react';
-import { connect } from 'react-redux';
-import OpenApp from './OpenApp';
-import { handleInitialData } from '../actions/shared';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import SignIn from './SignIn';
-import Navigation from "./Navigation";
-import '../App.css';
+import { React, Component } from 'react'
+import { connect } from 'react-redux'
+import OpenApp from './OpenApp'
+import { handleInitialData } from '../actions/shared'
+import { Route } from 'react-router-dom'
+import SignIn from './SignIn'
+import Navigation from './Navigation'
+import '../App.css'
 
-import {
-  Container, Row, Col, Navbar, Nav, NavLink,
-  NavbarBrand,
-} from 'react-bootstrap';
+import { Container } from 'react-bootstrap'
 
 class App extends Component {
-
   componentDidMount() {
-    this.props.dispatch(handleInitialData());
+    this.props.dispatch(handleInitialData())
   }
 
   render() {
-
-    const { isSignedIn } = this.props;
+    const { isSignedIn } = this.props
 
     return (
       <Container>
         <Navigation />
-        { isSignedIn ?
-        < OpenApp/> :
-        <Route path="/" component={SignIn} /> }
+        {isSignedIn ? <OpenApp /> : <Route path="/" component={SignIn} />}
       </Container>
-    );
+    )
   }
 }
 
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps({ authedUser }) {
   return {
-    isSignedIn: authedUser !== null
+    isSignedIn: authedUser !== null,
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App)
