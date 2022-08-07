@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import QuestionsSet from './QuestionsSet'
-import { PropTypes } from 'prop-types'
 import { Container, Row } from 'react-bootstrap'
 
 class Dashboard extends Component {

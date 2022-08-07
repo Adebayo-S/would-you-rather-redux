@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Question from './Question'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Box from '@mui/material/Box'
