@@ -15,6 +15,6 @@ export default function AlertDismissible() {
       </Alert>
     );
   }
-  return <Button onClick={() => setShow(true)}>Show Alert</Button>;
+//   return <Button onClick={() => setShow(true)}>Show Alert</Button>;
 }
 

@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setAuthedUser } from "../actions/authedUser";
+import { signIn } from "../actions/shared";
+import { withRouter } from 'react-router-dom';
 
 class SignIn extends Component {
-    state = { userID: ''}
+    state = { userId: '' };
+
 
     handleChange = (e) => {
-        const userID = e.target.value;
-        this.setState({ userID });
+        const userId = e.target.value;
+        this.setState({ userId });
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const { userID } = this.state;
-        const { dispatch } = this.props;
-        dispatch(setAuthedUser(userID));
+        const { userId } = this.state;
+        this.props.dispatch(signIn(userId));
+        this.props.history.push('/dashboard');
     }
 
     render() {
@@ -62,4 +64,5 @@ function mapStateToProps(users) {
     return users;
 }
 
-export default connect(mapStateToProps)(SignIn)
+// export default withRouter(connect(mapStateToProps)(SignIn))(SignIn);
+export default connect(mapStateToProps)(SignIn);

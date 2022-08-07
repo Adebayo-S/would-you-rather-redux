@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
+import Details from "./Details";
 import Login from "./Login";
 import UserPage from "./UserPage";
 import NewQuestion from "./NewQuestion";
@@ -19,15 +20,15 @@ class OpenApp extends Component {
     render() {
         return (
         <Container>
-            <div>hello</div>
-            {/* <Switch>
-                <Route path="/" exact component={Dashboard} />
-                <Route path="/login" component={Login} />
+            {<Switch>
+                <Route path="/dashboard" exact component={Dashboard} />
+                <Route path="/questions/:id" component={Details} />
+                <Route path="/new" component={NewQuestion} />
+                {/* <Route path="/login" component={Login} />
                 <Route path="/user/:id" component={UserPage} />
-                <Route path="/question" component={NewQuestion} />
                 <Route path="/leaderboard" component={Leaderboard} />
-                <Route component={ErrorPage} />
-            </Switch> */}
+                <Route component={ErrorPage} /> */}
+            </Switch>}
         </Container>
         );
     }
