@@ -14,7 +14,7 @@ class OpenApp extends Component {
           <Switch>
             <Route path="/dashboard" exact component={Dashboard} />
             <Route path="/questions/:id" component={Details} />
-            <Route path="/new" component={NewQuestion} />
+            <Route path="/add" component={NewQuestion} />
             <Route path="/leaderboard" component={Leaderboard} />
           </Switch>
         }

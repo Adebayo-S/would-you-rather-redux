@@ -37,7 +37,7 @@ class Navigation extends Component {
               <NavLink className="nav-link" to="/dashboard">
                 Home
               </NavLink>
-              <NavLink className="nav-link" to="/new">
+              <NavLink className="nav-link" to="/add">
                 New Question
               </NavLink>
               <NavLink className="nav-link" to="/leaderboard">
